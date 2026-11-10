@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>보스돌이 장부</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="보스돌이">
+<script>
+  // 홈 화면 아이콘으로 열렸을 때(start_url 의 ?app=1, 또는 standalone 모드)만 장부로 바로 넘어감.
+  // 브라우저로 이 페이지를 열면 넘어가지 않아야 "홈 화면에 추가"를 할 수 있음.
+  var LEDGER = 'https://claude.ai/artifact/QPquiHMPDourBkJMhNTVVE';
+  var app = /[?&]app=1/.test(location.search) ||
+    (window.matchMedia && matchMedia('(display-mode: standalone)').matches) ||
+    navigator.standalone === true;
+  if (app) location.replace(LEDGER);
+</script>
+<style>
+  :root { --bg: #ffffff; --fg: #1d2433; --sub: #5b6577; --accent: #3a9ad9; --card: #f2f8fd; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141820; --fg: #e8edf5; --sub: #a0aabb; --accent: #6cbcf0; --card: #1e2430; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; line-height: 1.6; }
+  main { max-width: 480px; margin: 0 auto; padding: 32px 16px 48px; text-align: center; }
+  img { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+  h1 { font-size: 24px; margin: 16px 0 4px; }
+  p.sub { color: var(--sub); margin: 0 0 24px; }
+  ol { text-align: left; background: var(--card); border-radius: 14px; padding: 16px 16px 16px 36px; margin: 0 0 24px; }
+  li + li { margin-top: 6px; }
+  a.btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    padding: 12px 28px; border-radius: 999px; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon-512.png" alt="보스돌이 장부 아이콘">
+  <h1>보스돌이 장부</h1>
+  <p class="sub">홈 화면에 추가하면 앱처럼 열려요</p>
+  <ol>
+    <li>삼성 인터넷 아래쪽 <b>≡ 메뉴</b>를 눌러요.</li>
+    <li><b>현재 페이지 추가</b> → <b>홈 화면</b>을 눌러요.<br>(“앱 설치”가 보이면 그걸 눌러도 돼요)</li>
+    <li>홈 화면에 생긴 아이콘을 누르면 장부가 열려요.</li>
+  </ol>
+  <a class="btn" href="https://claude.ai/artifact/QPquiHMPDourBkJMhNTVVE">장부 바로 열기</a>
+</main>
+</body>
+</html>
